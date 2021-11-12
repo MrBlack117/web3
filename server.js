@@ -25,7 +25,7 @@ app.post('/saveTabs', urlencodedParser, (req, res) => {
         + ";content=" + req.body.content + ";"
         + ";html=" + req.body.html + ";";
 
-    fs.writeFile('dropdown.txt', content, function (err) {
+    fs.writeFile('tabs.txt', content, function (err) {
         if (err) return console.log(err);
         console.log("Saved file");
 
