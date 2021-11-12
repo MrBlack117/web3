@@ -11,7 +11,7 @@ var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + "/lab3.html")
+    res.sendFile(__dirname + "/Lab1.html")
 })
 
 app.listen(port, () => {
