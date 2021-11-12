@@ -18,7 +18,7 @@ app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
 
-app.post('/saveDropdown', urlencodedParser, (req, res) => {
+app.post('/saveTabs', urlencodedParser, (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*')
 
     const content = "title=" + req.body.title
@@ -29,7 +29,7 @@ app.post('/saveDropdown', urlencodedParser, (req, res) => {
         if (err) return console.log(err);
         console.log("Saved file");
 
-        fs.readFile("dropdown.txt", 'utf8', function (err, data) {
+        fs.readFile("tabs.txt", 'utf8', function (err, data) {
             if (err) {
                 console.log(err);
             }
@@ -38,10 +38,10 @@ app.post('/saveDropdown', urlencodedParser, (req, res) => {
     });
 });
 
-app.get('/getDropdown', (req, res) => {
+app.get('/getTabs', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*')
 
-    fs.readFile("dropdown.txt", 'utf8', function (err, data) {
+    fs.readFile("tabs.txt", 'utf8', function (err, data) {
         if (err) {
             console.log(err);
         }
